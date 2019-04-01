@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>优学机器人下载移动端二维码</title>
+	</head>
+	<style type="text/css">
+		body{width: 100%;height: 100%;margin: 0;padding: 0;}
+		#container{width: 100%; height: 100%;text-align: center;}
+		#andriod{width: 100%;height: 900px;}
+		.itune{width: 100%;height: 900px;}
+	</style>
+	<body>
+		<div id="container">
+			<!--<div class="select">
+				<select id="differV">
+					<option>优学小宇</option>
+					<option>优学小惠</option>
+					<option>优学英文版</option>
+				</select>
+			</div>-->
+			<div id="andriod">
+				<img src="img/2018_01_17_1023122024.png" style="margin-top: 15%;"/>
+			</div>
+			<div class="itune">
+				<img src="img/2018_01_17_1024176205.png" style="margin-top: 10%;"/>
+			</div>
+		</div>
+		<script>
+			var ip = "http://116.62.143.235:8082";
+			
+			var url = document.location.href;
+			console.log(url);
+			var param = 0;
+			 var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+             var paramv = window.location.search.substr(1).match(reg);
+			 console.log(paramv);
+			 
+			    if (url.indexOf("?")!=-1&&param==1) {
+					window.location.href=ip+"/moblieWeb/englishVersion.html?param=1";
+					
+					
+				}else if (param==2) {
+					 
+					 window.location.href=ip+"/moblieWeb/xiaohui.html?param=2";
+				}			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery.js" ></script>
+		<script type="text/javascript" src="js/jquery.min.js" ></script>
+	</head>
+	<style type="text/css">
+		body {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		
+		#container {
+			width: 100%;
+			height: 600px;
+			text-align: center;
+		}
+		
+		#andriod {
+			width: 100%;
+			height: 300px;
+		}
+		
+		.itune {
+			width: 100%;
+			height: 300px;
+		}
+		
+		#ceremonial {
+			width: 100%;
+			height: 100%;
+		}
+		
+		#unformal {
+			width: 100%;
+			height: 100%;
+			display: none;
+		}
+        
+        img{
+        	width: 160px;
+        	height: 160px;
+        	padding-top: 100px;
+        }
+	</style>
+
+	<body>
+		<div id="container">
+			<!--<div class="select">
+				<select id="differV">
+					<option>优学小宇</option>
+					<option>优学小惠</option>
+					<option>优学英文版</option>
+				</select>
+			</div>-->
+			<div id="unformal">
+				<div id="_andriod">
+					<img src="img/2018_02_07_ likehuman.png" id="xh" />
+				</div>
+				<div class="_itune">
+					<img src="img/iosXh.png" id="iosXh" />
+				</div>
+			</div>
+			<div id="ceremonial">
+				<div id="andriod">
+					<img src="img/androidyx.png" id="yx" />
+				</div>
+				<div class="itune">
+					<img src="img/iosyx.png" id="iosYx" />
+				</div>
+			</div>
+		</div>
+		<script>
+			    
+			    
+			    
+			    //页面提示消息
+             	$(document).ready(function(){
+             		if (r==true) {
+             			return true;
+             		} else{
+             			return false;
+             		}
+             		
+             	})
+			//定义服务器的ip地址
+			//			var ip = "http://116.62.143.235:8082";
+
+			//获取url的具体地址
+			var url = window.location.href;
+            var ua = navigator.userAgent.toLowerCase();
+            console.log(ua);
+//          if ( !!ua.match(/AppleWebKit.*Mobile.*/)) {
+//          	
+//          }
+            //页面提示消息的变量
+            var r = confirm("若您需要长按识别二维码，请在之前单击对应版本二维码（再单击可重新显示），隐藏非手机适配版本，")
+             
+			//获取url地址栏的参数
+			function getQueryVariable(variable) {
+				//获取地址栏的参数并截取
+				var query = window.location.search.substring(1);
+
+				//截取获取地址栏参数之后，存入数组
+				var vars = query.split("&");
+				//for循环取出数组并且截去=号
+				for(var i = 0; i < vars.length; i++) {
+
+					var pair = vars[i].split("=");
+
+					//判断参数数组获取的参数是否等于传进来的参数，是则返回里边的参数值
+					if(pair[0] == variable) {
+						return pair[1];
+					}
+				}
+				return(false);
+			}
+
+			var param = getQueryVariable("param");
+			//			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+			//          param = window.location.search.substr(1).match(reg);
+			console.log(param);
+			console.log(url);
+//          var html = document.title;
+            var topic = document.title;
+            
+            
+            console.log(topic);
+			if(url.indexOf("?") != -1 && param == 2) {
+				document.getElementById("unformal").style.display = "block"
+				document.getElementById("ceremonial").style.display = "none";
+                var top="小慧机器人下载移动端二维码";
+                document.title = top+topic;
+//				console.log(html);
+				//					window.location.href=ip+"/moblieWeb/index.htm?param=2";
+
+			} else {
+                
+                var _top="优学机器人下载移动端二维码";
+                document.title = _top+topic;
+				document.getElementById("unformal").style.display = "none";
+				document.getElementById("ceremonial").style.display = "block";
+			}
+			
+			$("#yx").click(function(){
+				
+
+				if ($(".itune").css("display")=="none") {
+					$(".itune").css("display","block");
+					$("#andriod").css("margin-top","0px")
+				} else{
+					$(".itune").css("display","none");
+					$("#andriod").css("margin-top","100px")
+				}
+
+			})
+			
+			$("#iosYx").click(function(){
+				console.log("+");
+				if ($("#andriod").css("display")=="none") {
+					$("#andriod").css("display","block");
+					$("#iosYx").css("margin-top","0px");
+				} else {
+					$("#andriod").css("display","none");
+					$("#iosYx").css("margin-top","100px");
+				}
+
+			})
+			
+			$("#xh").click(function(){
+				
+				if ($("._itune").css("display")=="none") {
+					$("._itune").css("display","block");
+					$("#_andriod").css("margin-top","0px")
+				} else{
+					$("._itune").css("display","none");
+					$("#_andriod").css("margin-top","100px")
+				}
+
+			})
+             
+            $("#iosXh").click(function(){
+				console.log("+");
+				if ($("#_andriod").css("display")=="none") {
+					$("#_andriod").css("display","block");
+					$("#iosXh").css("margin-top","0px");
+				} else {
+					$("#_andriod").css("display","none");
+					$("#iosXh").css("margin-top","100px");
+				}
+
+			}) 
+
+		</script>
+	</body>
+
+</html>
