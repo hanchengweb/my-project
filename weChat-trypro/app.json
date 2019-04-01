@@ -1,0 +1,37 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#ff0000",
+    "navigationBarTitleText": "医药小程序",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "/images/index.png",
+      "selectedIconPath": "/images/index1.png"
+    },{
+      "pagePath": "pages/index/index",
+      "text": "药品",
+      "iconPath": "/images/pills.png",
+      "selectedIconPath": "/images/pills1.png"
+    },{
+      "pagePath": "pages/index/index",
+      "text": "购物车",
+      "iconPath": "/images/shopcar(-1).png",
+      "selectedIconPath": "/images/shopcar.png"
+    },{
+      "pagePath": "pages/index/index",
+      "text": "我的",
+      "iconPath": "/images/my.png",
+      "selectedIconPath": "/images/my1.png"
+    }],
+    "backgroundColor":"#ff0000",
+    "selectedColor":"#FFCC30"
+  }
+}

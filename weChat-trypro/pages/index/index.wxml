@@ -1,0 +1,33 @@
+<!--index.wxml-->
+<view class="container">
+<view class='inp'>
+<input type='text' class='search'/>
+</view>
+  <swiper class='swiper' indicator-dots="false" autoplay="false" interval="5000" duration="1000">
+  <block wx:for="{{img}}" wx:key="item">
+  <swiper-item>
+  <image src='{{item}}'class="slide-image" width="355" height="150" />
+  </swiper-item>
+  </block>
+ </swiper> 
+ <view class='template'>
+  <block>
+<view class='titletemp'>
+ <view class='title' wx:for="{{adpicinfos}}" wx:key="adPic">
+<image class='adpic' src='{{item.adPic}}'></image>
+ <text class='adTitle'>{{item.adTitle}}</text>  
+</view>
+</view>
+ </block> 
+  <view class='next' style='{{index==0?"width:100%;height:400rpx":""}}' wx:for="item-index" wx:for="{{templateImage}}" wx:key="item">
+ <image class='templateimg' src='{{item}}'></image>
+ </view> 
+ <view class="sapn_temp">
+ <view class="sapn_goods">
+ <image class='img-title' src="http://s.maiyaole.com/yyw/wap/home/static/img/iwcon_hot.f70389b.png" />
+ <text class='text'>距时间仅剩</text>
+ <navigator class='more_nav'>更多<image class='arrow' src='/images/arrow.png'></image></navigator>
+ </view>
+ </view>
+ </view>
+</view>
